@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Predição de Brigadeiros</title>
+</head>
+<body>
+    <header>
+        <h1>Predição de Brigadeiros</h1>
+        <nav>
+            <a href="{{ url_for('hello_world') }}" class="redirect-button">Página Inicial</a>
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <form action="{{ url_for('resultado') }}" method="post">
+            <label for="chocolate_50">Chocolate em Pó (50%):</label>
+            <input type="number" step="0.1" name="chocolate_50" required>
+
+            <label for="achocolatado">Achocolatado:</label>
+            <input type="number" step="0.1" name="achocolatado" required>
+
+            <label for="manteiga">Manteiga:</label>
+            <input type="number" step="0.1" name="manteiga" required>
+
+            <label for="tempo_de_cozimento">Tempo de Cozimento (minutos):</label>
+            <input type="number" step="0.1" name="tempo_de_cozimento" required>
+
+            <label for="predicao_tipo">O que você deseja predizer?</label>
+            <select name="predicao_tipo" id="predicao_tipo">
+                <option value="sabor">Sabor</option>
+                <option value="dulçor">Dulçor</option>
+                <option value="textura">Textura</option>
+                <option value="aroma">Aroma</option>
+                <option value="consistência">Consistência</option>
+                <option value="cor">Cor</option>
+                <option value="nota geral">Nota geral</option>
+            </select>
+
+            <button type="submit">Fazer Predição</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Brigadeiro Perfeito. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
